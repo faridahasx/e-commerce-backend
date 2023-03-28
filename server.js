@@ -51,7 +51,7 @@ app.use(passpost.initialize());
 // CORS options
 app.use(cors({
     origin:[
-        '*', 
+        'https://sw-shop.netlify.app'
     ],
     methods: "GET, POST, PUT, DELETE, PATCH",
     credentials:true

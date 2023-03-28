@@ -110,7 +110,6 @@ router.post('/refresh_token', async(req, res) =>{
 
 // Forgot password
 router.post('/forgot-password', async(req, res)=>{
-
     try {
         const { email } = req.body;
         const user = await User.findOne({ email });
