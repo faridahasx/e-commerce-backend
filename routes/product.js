@@ -57,7 +57,6 @@ class QueryFeatures {
 // Get products
 router.get("/", async(req, res)=>{
     try {
-        console.log('GET')
         const features = new QueryFeatures(Product.find(), req.query)
         .filtering().sorting().paginating();
         const products = await features.databaseQuery;
