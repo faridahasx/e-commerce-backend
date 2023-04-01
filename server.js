@@ -7,6 +7,7 @@ const cookieParser = require("cookie-parser");
 require('dotenv').config();
 const MongoStore = require('connect-mongo');
 const connectDB = require("./config/database");
+const passportSetup = require('./middleware/passport.js')
 const auth = require('./routes/auth');
 const user = require('./routes/user');
 const product = require('./routes/product');
