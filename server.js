@@ -50,26 +50,20 @@ app.use(session({
 app.use(passpost.initialize());
 
 // CORS options
-// app.use(cors({
-//     origin:[
-//         '*'
-//     ],
-//     methods: "GET, POST, PUT, DELETE, PATCH",
-//     credentials:true
-// }));
 
-// app.use(function (req, res, next) {
-//     res.header("Access-Control-Allow-Origin", "*");
-//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//     next();
-//  })
- 
- app.use(cors({
-    'allowedHeaders': ['Content-Type'], 
-    'exposedHeaders': ['Content-Type'], 
-    'origin': '*',
-    'methods': 'GET, HEAD, PUT, PATCH, POST, DELETE',
-    'preflightContinue': false
+
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "https://sw-shop.netlify.app");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+  
+app.use(cors({
+    origin:[
+        '*'
+    ],
+    methods: "GET, POST, PUT, DELETE, PATCH",
+    credentials:true,
 }));
 
 // Routes
